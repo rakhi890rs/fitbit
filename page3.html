@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Body Type Tips</title>
+<style>
+ body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+}
+
+ .xc{
+   position: relative;
+   margin-left: 49%;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+}
+
+select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+select:focus {
+  border-color: #6fb7ff;
+}
+
+#tips {
+  text-align: left;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+li:before {
+  content: "\2022";
+  color: #6fb7ff;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Select your body type:</h2>
+  <select id="bodyTypeSelector">
+    <option value="aesthetic">Aesthetic</option>
+    <option value="bulky">Bulky</option>
+    <option value="fit">Fit</option>
+  </select>
+  
+  <div id="tips">
+    
+  </div>
+</div>
+
+<script>
+document.getElementById('bodyTypeSelector').addEventListener('change', function() {
+  var bodyType = this.value;
+  var tipsContainer = document.getElementById('tips');
+  var tips = '';
+
+  switch (bodyType) {
+    case 'aesthetic':
+      tips = `
+        <h3>Aesthetic Body Type Tips:</h3>
+        <ul>
+          <li>Focus on balanced diet with lean proteins and healthy fats.</li>
+          <li>Incorporate both strength training and cardio exercises into your routine.</li>
+          <li>Pay attention to symmetry in your workouts to enhance muscle definition.</li>
+          <li>Consider high-intensity interval training (HIIT) for fat loss and muscle toning.</li>
+          <li>Stay consistent with your workout routine and track your progress.</li>
+        </ul>
+      `;
+      break;
+    case 'bulky':
+      tips = `
+        <h3>Bulky Body Type Tips:</h3>
+        <ul>
+          <li>Consume a surplus of calories to support muscle growth.</li>
+          <li>Focus on heavy weightlifting with lower repetitions to build muscle mass.</li>
+          <li>Incorporate compound exercises like squats, deadlifts, and bench presses into your workouts.</li>
+          <li>Get plenty of rest and prioritize recovery to allow muscles to grow.</li>
+          <li>Avoid excessive cardio that may hinder muscle gains.</li>
+        </ul>
+      `;
+      break;
+    case 'fit':
+      tips = `
+        <h3>Fit Body Type Tips:</h3>
+        <ul>
+          <li>Maintain a balanced diet with a focus on whole foods and adequate protein.</li>
+          <li>Combine strength training with cardiovascular exercises to maintain overall fitness.</li>
+          <li>Try incorporating functional movements into your workouts for increased agility and flexibility.</li>
+          <li>Stay active throughout the day, not just during workouts.</li>
+          <li>Find activities you enjoy to keep your fitness routine interesting and sustainable.</li>
+        </ul>
+      `;
+      break;
+    default:
+      tips = `<p>Please select a body type to see tips.</p>`;
+  }
+
+  tipsContainer.innerHTML = tips;
+});
+</script>
+<a  href="yogapoga4.html"><button class="xc" >NEXT</button></a>
+</body>
+</html>
